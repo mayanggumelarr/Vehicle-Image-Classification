@@ -1,129 +1,106 @@
-# **🚗Vehicle Image Classification using CNN**
+# 🚗 Vehicle Image Classification using CNN
 
-This project implements an image classification model to recognize different types of vehicles using a Convolutional Neural Network (CNN). <br>
+This project implements an image classification model to recognize different types of vehicles using a **Convolutional Neural Network (CNN)** combined with **MobileNetV2**.  
 
-The model is trained on a dataset of vehicle images and is capable of classifying several vehicle categories such as cars, bikes, trains, and more.
+The model is trained on a dataset of vehicle images and is capable of classifying several vehicle categories such as **auto rickshaws, bikes, cars, motorcycles, planes, ships, and trains**.
+
+In addition to model development, this repository also includes a **local inference dashboard** built with **Flask + TensorFlow Lite (TFLite)** for running predictions directly in the browser.
 
 ---
 
 ## 📌 Project Overview
 
-The objective of this project is to build a deep learning model for vehicle image classification using TensorFlow/Keras. <br>
+The objective of this project is to build a deep learning model for **vehicle image classification** using **TensorFlow/Keras**.
 
-This project builds a custom CNN architecture + MobileNetV2 for better classification <br>
+This project combines:
+- **Custom CNN architecture**
+- **Pre-trained MobileNetV2**
+- **TFLite export for lightweight inference**
+- **Local Flask dashboard deployment**
 
-The workflow includes:
-
+### Workflow includes:
 - Dataset exploration
-
 - Data preprocessing
-
 - Image augmentation
-
 - CNN model development
-
 - Model training and evaluation
-
 - Model export to multiple deployment formats
-
-- Inference 
+- Local inference using Flask + TFLite
 
 ---
 
 ## 🚘 Vehicle Categories
-You can access the data source at thi URL: [https://share.google/sP5KhBzbSFhRHXZzG](kaggle) <br>
 
-The model classifies images into the following categories: <br>
+The model classifies images into the following categories:
 
-1. Auto Rickshaws
+1. Auto Rickshaws  
+2. Bikes  
+3. Cars  
+4. Motorcycles  
+5. Planes  
+6. Ships  
+7. Trains  
 
-2. Bikes
-
-3. Cars
-
-4. Motorcycles
-
-5. Planes
-
-6. Ships
-
-7. Trains
-
---- 
-
-
-## 📊 Dataset Information
-
-- Total Images (Base): 5590
-
-- Image Resolution: Various sizes
-
-- Class Distribution Base: Relatively balanced (~800 images per class)
-
-Note: Because image resolutions vary, preprocessing and augmentation are applied before training. <br>
-
-- Total Images (After Augmentation) : 11190
-
-- Class Distribution Augmented: Relatively balanced (~1600 images per class)
-
---- 
-
-## 🔄 Data Augmentation
-
-To improve model generalization and increase dataset diversity, several augmentation techniques are applied: <br>
-
-- Rotate Counterclockwise
-
-- Rotate Clockwise
-
-- Vertical Flip (Up-Down)
-
-- Blur Transformation
-
-These augmentations help the model learn robust visual patterns and reduce overfitting.
+### 📂 Dataset Source
+You can access the dataset source here:  
+[Google Drive Link](https://share.google/sP5KhBzbSFhRHXZzG)
 
 ---
 
+## 📊 Dataset Information
+
+- **Total Images (Base):** 5,590
+- **Image Resolution:** Various sizes
+- **Class Distribution (Base):** Relatively balanced (~800 images per class)
+
+> **Note:** Because image resolutions vary, preprocessing and augmentation are applied before training.
+
+- **Total Images (After Augmentation):** 11,190
+- **Class Distribution (Augmented):** Relatively balanced (~1,600 images per class)
+
+---
+
+## 🔄 Data Augmentation
+
+To improve model generalization and increase dataset diversity, several augmentation techniques are applied:
+
+- Rotate Counterclockwise
+- Rotate Clockwise
+- Vertical Flip (Up-Down)
+- Blur Transformation
+
+These augmentations help the model learn more robust visual patterns and reduce overfitting.
+
+---
 
 ## 🧠 Model Architecture
 
-This project uses a Pre-Trained Model MobileNetV2 + custom Convolutional Neural Network (CNN) architecture. <br>
+This project uses a **Pre-trained MobileNetV2** combined with a **custom Convolutional Neural Network (CNN)** architecture.
 
-Typical layers used include: <br>
-
+### Typical layers used include:
 - Convolutional Layers
-
 - Max Pooling Layers
-
 - GlobalAveragePooling2D
-
 - Dropout Layers
-
 - Fully Connected (Dense) Layers
-
 - Softmax Output Layer
 
 The model learns spatial features from vehicle images to classify them into their respective categories.
 
 ---
 
-
 ## 💾 Model Export
 
-After training, the model is saved in three different formats for flexibility and deployment purposes: <br>
+After training, the model is exported in three different formats for flexibility and deployment purposes:
 
-- TensorFlow SavedModel
+- **TensorFlow SavedModel**
+- **TensorFlow Lite (TFLite)** – suitable for mobile and edge deployment
+- **TensorFlow.js (TFJS)** – suitable for web-based applications
 
-- TensorFlow Lite (TFLite) – suitable for mobile deployment
-
-- TensorFlow.js (TFJS) – for web-based applications
-
-This allows the model to be integrated into multiple platforms such as: <br>
+This allows the model to be integrated into multiple platforms such as:
 
 - Web applications
-
 - Mobile apps
-
 - Edge devices
 
 ---
@@ -132,78 +109,104 @@ This allows the model to be integrated into multiple platforms such as: <br>
 
 This project utilizes several libraries for data preparation, image processing, model training, and deployment.
 
-#### 📊 Data Preparation & Analysis
+### 📊 Data Preparation & Analysis
+- **Pandas** – data manipulation and tabular processing
+- **NumPy** – numerical computing and array operations
+- **Matplotlib** – data visualization
+- **Seaborn** – statistical data visualization
 
-- Pandas – data manipulation and tabular processing
+### 🖼️ Image Processing & Augmentation
+- **OpenCV (cv2)** – image loading and preprocessing
+- **Pillow (PIL)** – image handling and manipulation
+- **Scikit-image** – image transformations and augmentation
+- Resize, rotation, and affine transformations
 
-- NumPy – numerical computing and array operations
+### 🤖 Machine Learning & Deep Learning
+- **Scikit-learn**
+  - Train-test split
+- **TensorFlow / Keras**
+  - CNN model development
+  - MobileNetV2 architecture
+  - Model training and evaluation
 
-- Matplotlib – data visualization
+### 🌐 Model Deployment
+- **TensorFlow SavedModel**
+- **TensorFlow Lite (TFLite)** – deployment for mobile/edge devices
+- **TensorFlow.js (TFJS)** – deployment for web applications
+- **Flask** – backend for local dashboard inference
 
-- Seaborn – statistical data visualization
+### ⚙️ Utilities
+- **tqdm** – progress bar for notebook execution
+- **joblib** – model/data serialization
+- **os & shutil** – file and directory management
+- **warnings** – suppress unnecessary warnings
 
-#### 🖼️ Image Processing & Augmentation
+---
 
-- OpenCV (cv2) – image loading and preprocessing
+## 📊 Results
 
-- Pillow (PIL) – image handling and manipulation
+### Base Model
+- **Train Accuracy:** 99.27%
+- **Validation Accuracy:** 95.17%
+- **Train Loss:** 2.4%
+- **Validation Loss:** 27.0%
 
-- Scikit-image – image transformations and augmentation
+### Fine-Tuned Model
+- **Train Accuracy:** 98.33%
+- **Validation Accuracy:** 95.11%
+- **Train Loss:** 5.2%
+- **Validation Loss:** 19.5%
 
-- Resize, Rotation
+### Test Evaluation
+- **Test Loss:** 7.7%
+- **Test Accuracy:** 97.0%
 
-- Affine transformations
+---
 
+## 🖥️ Local Dashboard Inference (Flask + TFLite)
 
-#### 🤖 Machine Learning & Deep Learning
+In addition to model training and export, this project also includes a **simple local dashboard** for running inference using the exported **TensorFlow Lite (`.tflite`) model**.
 
-- Scikit-learn
+The dashboard is built with:
 
-    - Train-test split
+- **Flask** as the backend
+- **HTML, CSS, JavaScript** as the frontend
+- **TensorFlow Lite Interpreter** for prediction
+- **Monochrome UI design** for a clean and minimal appearance
 
-- TensorFlow / Keras
+This dashboard allows users to upload a vehicle image and get a prediction result directly in the browser.
 
-    - CNN model development
+---
 
-    - MobileNetV2 architecture
+## ✨ Dashboard Features
 
-    - Model training and evaluation
+- Upload a vehicle image for prediction
+- Drag & drop image support
+- Real-time image preview before prediction
+- Predict vehicle class using the exported **TFLite model**
+- Display predicted class and confidence score
+- Delete/reset image after prediction
+- Responsive and minimal **monochrome-themed interface**
+- Runs fully in a local environment
 
-#### 🌐 Model Deployment
-- Saved Model
+---
 
-- TensorFlow Lite (TFLite) – deployment for mobile/edge devices
+## 📁 Project Structure
 
-- TensorFlow.js – deployment for web applications
-
-#### ⚙️ Utilities
-
-- tqdm – progress bar for notebook execution
-
-- joblib – model/data serialization
-
-- OS & shutil – file and directory management
-
-- warnings – suppress unnecessary warnings
-
---- 
-
-### 📊 Result 
-
-#### Base Model 
-- Accuracy Train : 99,27%
-- Accuracy Val : 95,17%
-- Loss Train : 2,4%
-- Loss Val : 27%
-
-#### Fine Tuned Model
-- Accuracy Train : 98,33%
-- Accuracy Val : 95,11%
-- Loss Train : 5,2%
-- Loss Val : 19,5%
-
-### Test Evaluate Model
-- Test Loss: 7,7%
-- Test Accuracy: 97%
-
---- 
+```bash
+vehicle-image-classification/
+├── dashboard/
+│   ├── app.py
+│   ├── static/
+│   │   ├── script.js
+│   │   └── style.css
+│   ├── templates/
+│   │   └── index.html
+│   └── tflite/
+│       └── model.tflite
+├── notebook_cnn.ipynb
+├── saved_model/
+├── tfjs_model/
+├── tflite_model/
+├── requirements.txt
+└── README.md
