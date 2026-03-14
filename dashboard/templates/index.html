@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vehicle Prediction Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>Vehicle Prediction Dashboard</h1>
+        <p>
+          Upload an image to predict the vehicle type using your TFLite model.
+        </p>
+      </header>
+
+      <main class="card">
+        <div class="upload-section">
+          <label for="imageInput" class="upload-box" id="uploadBox">
+            <input type="file" id="imageInput" accept="image/*" hidden />
+            <span id="uploadText">Click or drag an image here</span>
+            <img
+              id="previewImage"
+              src=""
+              alt="Preview"
+              class="preview hidden"
+            />
+          </label>
+        </div>
+
+        <div class="button-group">
+          <button id="predictBtn" class="predict-btn">Predict Vehicle</button>
+          <button id="deleteBtn" class="delete-btn hidden">Delete Image</button>
+        </div>
+
+        <div class="result-section" id="resultSection">
+          <div class="result-card">
+            <h2>Prediction Result</h2>
+            <p>
+              <strong>Vehicle Type:</strong> <span id="predictionText">-</span>
+            </p>
+            <p>
+              <strong>Confidence:</strong> <span id="confidenceText">-</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="loading hidden" id="loading">
+          <div class="spinner"></div>
+          <p>Processing prediction...</p>
+        </div>
+
+        <div class="error-message hidden" id="errorMessage"></div>
+      </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>
