@@ -1,4 +1,4 @@
-## 🚗 Vehicle Image Classification using CNN
+# **🚗Vehicle Image Classification using CNN**
 
 This project implements an image classification model to recognize different types of vehicles using a Convolutional Neural Network (CNN). <br>
 
@@ -10,7 +10,7 @@ The model is trained on a dataset of vehicle images and is capable of classifyin
 
 The objective of this project is to build a deep learning model for vehicle image classification using TensorFlow/Keras. <br>
 
-Unlike many projects that use pretrained architectures (ResNet, MobileNet, etc.), this project builds a custom CNN architecture from scratch, allowing full control over the model structure and training process. <br>
+This project builds a custom CNN architecture + MobileNetV2 for better classification <br>
 
 The workflow includes:
 
@@ -31,6 +31,7 @@ The workflow includes:
 ---
 
 ## 🚘 Vehicle Categories
+You can access the data source at thi URL: [https://share.google/sP5KhBzbSFhRHXZzG](kaggle) <br>
 
 The model classifies images into the following categories: <br>
 
@@ -202,7 +203,7 @@ This project utilizes several libraries for data preparation, image processing, 
 - Loss Val : 19,5%
 
 ### Test Evaluate Model
-- Test Loss: 0.0774
-- Test Accuracy: 0.9786
+- Test Loss: 7,7%
+- Test Accuracy: 97%
 
 --- 
