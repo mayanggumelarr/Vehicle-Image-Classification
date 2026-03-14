@@ -15,7 +15,7 @@ app = Flask(
 # =========================
 # Load TFLite Model
 # =========================
-MODEL_PATH = os.path.join(BASE_DIR, "tflite", "model.tflite")
+MODEL_PATH = '../tflite/model.tflite'
 
 interpreter = tf.lite.Interpreter(model_path=MODEL_PATH)
 interpreter.allocate_tensors()
@@ -32,7 +32,7 @@ _, IMG_HEIGHT, IMG_WIDTH, IMG_CHANNELS = input_shape
 # =========================
 # EDIT SESUAI LABEL MODEL KAMU
 # =========================
-CLASS_NAMES = ["Bus", "Car", "Motorcycle", "Truck"]
+CLASS_NAMES = ['Auto Rickshaws', 'Bikes', 'Cars', 'Motorcycles', 'Planes', 'Ships', 'Trains']
 
 # =========================
 # Preprocess Image
