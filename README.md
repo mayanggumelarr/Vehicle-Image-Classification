@@ -43,7 +43,7 @@ The model classifies images into the following categories:
 
 ### 📂 Dataset Source
 You can access the dataset source here:  
-[Google Drive Link](https://share.google/sP5KhBzbSFhRHXZzG)
+[Kaggle Link](https://share.google/sP5KhBzbSFhRHXZzG)
 
 ---
 
